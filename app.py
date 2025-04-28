@@ -770,10 +770,11 @@ def main():
     
     # Start the bot using webhook
     logger.info("Starting webhook...")
+    port = int(os.getenv('PORT', 5000))
     app.run_webhook(
-        listen='0.0.0.0', 
-        port=5000, 
-        url_path='/webhook', 
+        listen='0.0.0.0',
+        port=port,
+        url_path='/webhook',
         webhook_url=f"{WEBHOOK_URL}/webhook"
     )
 
