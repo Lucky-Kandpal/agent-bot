@@ -1,5 +1,5 @@
-python-telegram-bot
-firebase-admin
-python-dotenv
+python-telegram-bot[webhooks]
 httpx
+python-dotenv
+firebase-admin
 groq
