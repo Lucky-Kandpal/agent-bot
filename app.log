@@ -269,3 +269,82 @@ INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZq
 INFO:env_config:Document received: ADIS-Modules-1.pdf (application/pdf)
 INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
 INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Document received: 1000048571.png (image/png)
+WARNING:env_config:Unsupported media type from 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Photo received: AgACAgUAAxkBAAIBBWgV3feFBPRIOYmTaidhRyGHTLxNAAL7yDEbjKKxVGbMHkNvy_OnAQADAgADeQADNgQ
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Document received: 1000048571.heic (image/heic)
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Document received: TheConsIndia.pdf (application/pdf)
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Text from 6133968140: process this...
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'process this'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: ChatCompletion(id='chatcmpl-3cdb58e4-af6d-42a3-be01-db66fda54526', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='It seems like you want me to process something, but I\'m not sure what. Could you please provide more context or clarify what you would like me to process?\n\nHere\'s my response:\n\n{\n "thought": "The user wants me to process something, but it\'s unclear what that is.",\n "service": "unknown",\n "confidence": 50,\n "response": "Could you please provide more context or clarify what you would like me to process?",\n "show_menu": true\n}', role='assistant', executed_tools=None, function_call=None, reasoning=None, tool_calls=None))], created=1746272380, model='meta-llama/llama-4-scout-17b-16e-instruct', object='chat.completion', system_fingerprint='fp_42ae451038', usage=CompletionUsage(completion_tokens=96, prompt_tokens=253, total_tokens=349, completion_time=0.22162383, prompt_time=0.012379821, queue_time=0.044924725, total_time=0.234003651), usage_breakdown=UsageBreakdown(models=None), x_groq={'id': 'req_01jtaz3sspe69svbwpta69rbmc'})
+INFO:env_config:Agent raw response: It seems like you want me to process something, but I'm not sure what. Could you please provide more...
+ERROR:env_config:JSON parsing error: Expecting value: line 1 column 1 (char 0)
+INFO:env_config:Agent determined service: unknown with confidence 70, show_menu: True
+INFO:env_config:Chat response for: 'process this'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Chatbot replied: 171 chars
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Document received: viralboost-a9b2c-firebase-adminsdk-osgd2-af2a69fa3a.json (application/json)
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Media received from user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:commands.handle_media:Document received: internshala-jobs.json (application/json)
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete

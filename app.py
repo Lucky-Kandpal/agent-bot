@@ -2,11 +2,9 @@ import os
 import logging
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 import logging
-from system_prompt import SYSTEM_INTENT_PROMPT, SYSTEM_CHAT_PROMPT, AGENT_SYSTEM_PROMPT
 from commands.start_cmd import start
 from keyboards.build_service_menu import build_service_menu
-from env_config import token, WEBHOOK_URL, EXTERNAL_APIS, groq_client, app_port, DEFAULT_MODEL
-from memory_storage.all import users, requests, processing_users, create_or_update_user, is_busy, set_busy, create_request, update_request
+from env_config import token, WEBHOOK_URL, app_port
 from menu.menu_route import menu_route
 from commands.handle_media import handle_media
 from commands.document_handle import handle_document
@@ -17,7 +15,6 @@ from commands.enhance_image_callback import enhance_image_callback
 from commands.convert_image_callback import convert_image_callback
 from commands.process_json_callback import process_json_callback
 from commands.process_pdf_callback import process_pdf_callback
-from telegram import Update
 logging.basicConfig(filename="app.log",level=os.getenv("LOG_LEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 
@@ -32,7 +29,7 @@ def main():
     app.add_handler(CallbackQueryHandler(convert_image_callback, pattern=r'^svc_convert_img$'))
     app.add_handler(CallbackQueryHandler(process_json_callback, pattern=r'^svc_process_json$'))
     app.add_handler(CallbackQueryHandler(process_pdf_callback,  pattern=r'^svc_process_pdf$'))
-    app.add_handler(CallbackQueryHandler(menu_route,            pattern=r'^svc_back$'))
+    app.add_handler(CallbackQueryHandler(menu_route, pattern=r'^svc_back$'))
 
 
     # Media handlers
