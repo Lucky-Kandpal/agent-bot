@@ -55,6 +55,13 @@ import re
 #             "response": "I'm having trouble understanding your request right now. Could you try again or select a specific service from the menu?",
 #             "show_menu": True
 #         }
+
+
+import json
+import re
+from env_config import logger, DEFAULT_MODEL, groq_client
+from system_prompt import AGENT_SYSTEM_PROMPT
+
 async def agent_response(text, user_id=None):
     """Enhanced agent response that understands user intent and guides appropriately"""
     logger.info(f"Agent processing: '{text}'")
@@ -66,8 +73,8 @@ async def agent_response(text, user_id=None):
                 {"role": "system", "content": AGENT_SYSTEM_PROMPT},
                 {"role": "user", "content": text}
             ],
-            temperature=0.2, 
-            max_completion_tokens=500, 
+            temperature=0.2,
+            max_completion_tokens=500,
             top_p=1
         )
         
@@ -76,23 +83,18 @@ async def agent_response(text, user_id=None):
         
         # Extract JSON from the response
         try:
-            # Find JSON content between triple backticks
-            json_str = ''
-            if '```' in response_text:
-                json_start = response_text.find('```') + 3
-                json_end = response_text.rfind('```')
-                if json_start > 3 and json_end > json_start:
-                    json_str = response_text[json_start:json_end].strip()
-                    # Remove any language identifier
-                    if json_str.startswith('json\n'):
-                        json_str = json_str[5:]
+            json_str = ""
+            # Try matching JSON inside triple backticks with an optional language identifier (e.g., json)
+            json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", response_text, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(1)
             else:
-                # Try to find JSON directly
+                # Fallback: find the first JSON object from the first occurrence of '{' to the last '}'
                 json_start = response_text.find('{')
                 json_end = response_text.rfind('}') + 1
                 if json_start >= 0 and json_end > json_start:
                     json_str = response_text[json_start:json_end]
-
+            
             if json_str:
                 parsed = json.loads(json_str)
                 logger.info(f"Parsed JSON response: {parsed}")

@@ -19,6 +19,9 @@ from commands.conversion_handlers import (
     convert_to_webp_handler
 )
 
+from convert_video_handler import convert_video_handler
+from convert_to_gif_handler import convert_to_gif_handler
+
 logging.basicConfig(filename="app.log",level=os.getenv("LOG_LEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 
@@ -33,6 +36,10 @@ def main():
     app.add_handler(CallbackQueryHandler(process_json_callback, pattern=r'^svc_process_json$'))
     app.add_handler(CallbackQueryHandler(process_pdf_callback,  pattern=r'^svc_process_pdf$'))
     app.add_handler(CallbackQueryHandler(menu_route, pattern=r'^svc_back$'))
+ 
+    app.add_handler(CallbackQueryHandler(convert_to_gif_handler, pattern=r'^convert_to_gif$'))
+    app.add_handler(CallbackQueryHandler(convert_video_handler, pattern=r'^convert_video$'))
+
 
 
 # Inside main() function, add these handlers:
