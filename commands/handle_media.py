@@ -318,7 +318,7 @@ import zipfile
 import tempfile
 import subprocess
 import os
-
+from docs_conversion import convert_pdf_to_docx, convert_json_to_csv, convert_excel_to_pdf
 
 async def handle_media(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle incoming media files with or without captions"""
@@ -495,16 +495,150 @@ async def handle_media(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_to_message_id=update.message.message_id
         )
 
-    # Default fallback for unsupported media
-    await processing_msg.delete()
-    return await update.message.reply_text(
-        "❌ Unsupported file type. I can process:\n"
-        "- 📷 Photos and Images\n"
-        "- 🎥 Video files\n\n"
-        "Please send me one of these file types!",
-        reply_markup=build_service_menu(),
-        reply_to_message_id=update.message.message_id
-    )
+    if caption and update.message.document:
+        try:
+            agent_result = await agent_response(caption, uid)
+            intent = agent_result.get('service', 'unknown')
+            confidence = agent_result.get('confidence', 0)
+            logger.info(f"Document caption intent: {intent} with confidence {confidence}")
+
+            if confidence > 80:
+                file_id = context.user_data.get('last_file_id')
+                file_name = context.user_data.get('last_file_name', 'document')
+                mime_type = context.user_data.get('last_mime', '')
+                
+                if not file_id:
+                    raise ValueError("No file available")
+
+                file = await context.bot.get_file(file_id)
+                doc_bytes = await file.download_as_bytearray()
+                
+                # Process PDF conversions
+                if mime_type == 'application/pdf':
+                    if intent in ['convert_pdf_to_docx', 'convert_to_word']:
+                        result = await convert_pdf_to_docx(doc_bytes, file_name)
+                    elif intent in ['convert_pdf_to_text', 'extract_text']:
+                        result = await extract_text_from_pdf(doc_bytes, file_name)
+                    else:
+                        raise ValueError("Unsupported PDF conversion")
+
+                # Process JSON conversions
+                elif mime_type == 'application/json':
+                    if intent in ['convert_json_to_csv', 'convert_to_csv']:
+                        result = await convert_json_to_csv(doc_bytes, file_name)
+                    elif intent == 'format_json':
+                        result = await format_json_file(doc_bytes, file_name)
+                    else:
+                        raise ValueError("Unsupported JSON conversion")
+
+                # Process Excel/CSV conversions
+                elif mime_type in ['application/vnd.ms-excel', 
+                                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                                 'text/csv']:
+                    if intent in ['convert_to_pdf', 'excel_to_pdf']:
+                        result = await convert_excel_to_pdf(doc_bytes, file_name)
+                    elif intent in ['convert_to_json', 'excel_to_json']:
+                        result = await convert_excel_to_json(doc_bytes, file_name)
+                    else:
+                        raise ValueError("Unsupported spreadsheet conversion")
+                else:
+                    raise ValueError("Unsupported document type")
+
+                if result.get('success'):
+                    await update.message.reply_document(
+                        document=result['file'],
+                        filename=result['filename'],
+                        caption=f"✨ *Conversion Complete!*\n{result.get('message', '')}",
+                        parse_mode="Markdown",
+                        reply_to_message_id=update.message.message_id
+                    )
+                else:
+                    raise Exception(result.get('error', 'Conversion failed'))
+
+                await processing_msg.delete()
+                return
+
+        except Exception as e:
+            logger.error(f"Document conversion error: {e}")
+            await processing_msg.delete()
+            return await update.message.reply_text(
+                "❌ *Conversion Failed*\n\n"
+                f"Error: {str(e)}\n\n"
+                "Please try again or choose a different format.",
+                parse_mode="Markdown",
+                reply_to_message_id=update.message.message_id
+            )
+
+    # Handle document type menus (when no caption)
+    elif update.message.document:
+        mime_type = context.user_data.get('last_mime', '')
+        
+        if mime_type == 'application/pdf':
+            kb = [
+                [InlineKeyboardButton('📄 Extract Text', callback_data='pdf_to_text')],
+                [InlineKeyboardButton('📎 Convert to Word', callback_data='pdf_to_docx')],
+                [InlineKeyboardButton('📦 Compress PDF', callback_data='compress_pdf')],
+                [InlineKeyboardButton('↩️ Back', callback_data='svc_back')],
+            ]
+            menu_text = (
+                "📑 Here's what I can do with your PDF:\n\n"
+                "• *Extract* text content\n"
+                "• *Convert* to Word format\n"
+                "• *Compress* PDF size\n\n"
+                "Choose an option or type your request!"
+            )
+            
+        elif mime_type == 'application/json':
+            kb = [
+                [InlineKeyboardButton('📊 Convert to CSV', callback_data='json_to_csv')],
+                [InlineKeyboardButton('📝 Format JSON', callback_data='format_json')],
+                [InlineKeyboardButton('✅ Validate', callback_data='validate_json')],
+                [InlineKeyboardButton('↩️ Back', callback_data='svc_back')],
+            ]
+            menu_text = (
+                "🔤 Here's what I can do with your JSON:\n\n"
+                "• *Convert* to CSV format\n"
+                "• *Format* and prettify\n"
+                "• *Validate* structure\n\n"
+                "Choose an option or type your request!"
+            )
+            
+        elif mime_type in ['application/vnd.ms-excel', 
+                          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                          'text/csv']:
+            kb = [
+                [InlineKeyboardButton('📄 Convert to PDF', callback_data='excel_to_pdf')],
+                [InlineKeyboardButton('📊 Convert to JSON', callback_data='excel_to_json')],
+                [InlineKeyboardButton('↩️ Back', callback_data='svc_back')],
+            ]
+            menu_text = (
+                "📊 Here's what I can do with your spreadsheet:\n\n"
+                "• Convert to *PDF*\n"
+                "• Convert to *JSON*\n\n"
+                "Choose an option or type your request!"
+            )
+        else:
+            await processing_msg.delete()
+            return await update.message.reply_text(
+                f"❌ Unsupported document type: `{mime_type}`\n\n"
+                "I can process:\n"
+                "- PDF documents\n"
+                "- JSON files\n"
+                "- Excel/CSV spreadsheets",
+                parse_mode="Markdown",
+                reply_markup=build_service_menu(),
+                reply_to_message_id=update.message.message_id
+            )
+
+        await processing_msg.delete()
+        return await update.message.reply_text(
+            menu_text,
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup(kb),
+            reply_to_message_id=update.message.message_id
+        )
+
+
 
 
 # from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup

@@ -18,6 +18,7 @@ from commands.conversion_handlers import (
     convert_to_jpg_handler,
     convert_to_webp_handler
 )
+from process_pdf_handler import process_pdf_handler, process_json_handler, process_excel_handler
 
 from convert_video_handler import convert_video_handler
 from convert_to_gif_handler import convert_to_gif_handler
@@ -39,6 +40,11 @@ def main():
  
     app.add_handler(CallbackQueryHandler(convert_to_gif_handler, pattern=r'^convert_to_gif$'))
     app.add_handler(CallbackQueryHandler(convert_video_handler, pattern=r'^convert_video$'))
+
+    app.add_handler(CallbackQueryHandler(process_pdf_handler, pattern=r'^pdf_'))
+    app.add_handler(CallbackQueryHandler(process_json_handler, pattern=r'^json_'))
+    app.add_handler(CallbackQueryHandler(process_excel_handler, pattern=r'^excel_'))
+
 
 
 
