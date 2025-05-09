@@ -59,17 +59,6 @@ A modular AI-powered Telegram agent bot built in Python, designed to handle a va
   * `LOG_LEVEL`: (optional) Logging level (default: INFO).
   * `OTHER_CONFIG`: Add other environment variables as needed. ([github.com](https://github.com/Lucky-Kandpal/agent-bot))
 
-## Running the Bot
-
-Execute the main application:
-
-````bash
-python app.py
-``` ([raw.githubusercontent.com](https://raw.githubusercontent.com/Lucky-Kandpal/agent-bot/main/app.py))
-
-## Project Structure
-
-````
 
 agent-bot/
 ├── api\_req/                 # API request utilities
