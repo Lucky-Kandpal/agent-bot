@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 # Config
 token = os.getenv("TELEGRAM_BOT_TOKEN")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
-EXTERNAL_APIS = {
+EXTERNAL_APIS = { 
     "text_to_image": os.getenv("API_TEXT_TO_IMAGE"),
     "text_to_video": os.getenv("API_TEXT_TO_VIDEO"),
     "voice_cleaner": os.getenv("API_VOICE_CLEANER"),

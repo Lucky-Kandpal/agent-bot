@@ -1,0 +1,307 @@
+<<<<<<< HEAD
+=======
+INFO:env_config:Media received from user 6133968140, caption: just turn it into gif
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'just turn it into gif'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: Here is the JSON analysis:
+
+```
+{
+  "service": "convert_to_gif",
+  "confidence": 90,
+  "response": "Converting your video to GIF format. Please provide the video file.",
+  "show_menu": false
+}
+```
+
+The user's intent is clear, and they are requesting a GIF conversion. The confidence score is 90, as the request is concise but assumes the user has a video file ready. The response provides a brief confirmation and requests the video file. The menu doesn't need to be shown as the user knows what they want.
+INFO:env_config:Parsed JSON response: {'service': 'convert_to_gif', 'confidence': 90, 'response': 'Converting your video to GIF format. Please provide the video file.', 'show_menu': False}
+INFO:env_config:Video caption intent: convert_to_gif with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/videos/file_10.mp4 "HTTP/1.1 200 OK"
+ERROR:env_config:Caption conversion error for video: [Errno 2] No such file or directory: 'ffmpeg'
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: turn it into gif
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'turn it into gif'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: Here is the JSON analysis of the user's message:
+
+```
+{
+  "service": "convert_to_gif",
+  "confidence": 90,
+  "response": "We can help you convert your video into a GIF. Please provide the video file you'd like to convert.",
+  "show_menu": false
+}
+```
+
+The user's message is clear and specific, indicating that they want to convert a video into a GIF. The confidence score is 90, as the message is direct and concise, but there is a small chance that the user might have meant something else. The response provides a helpful confirmation of the requested service and asks for the video file to be converted. The menu does not need to be shown, as the user's intent is clear.
+INFO:env_config:Parsed JSON response: {'service': 'convert_to_gif', 'confidence': 90, 'response': "We can help you convert your video into a GIF. Please provide the video file you'd like to convert.", 'show_menu': False}
+INFO:env_config:Video caption intent: convert_to_gif with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/videos/file_11.mp4 "HTTP/1.1 200 OK"
+ERROR:env_config:Caption conversion error for video: [Errno 2] No such file or directory: 'ffmpeg'
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: None
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/editMessageText "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/videos/file_12.mp4 "HTTP/1.1 200 OK"
+ERROR:env_config:GIF conversion error: Timed out
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/editMessageText "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: convert into gif
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'convert into gif'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_to_gif",
+ "confidence": 95,
+ "response": "I'll convert your video to GIF format. Processing...",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_to_gif', 'confidence': 95, 'response': "I'll convert your video to GIF format. Processing...", 'show_menu': False}
+INFO:env_config:Video caption intent: convert_to_gif with confidence 95
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/videos/file_13.mp4 "HTTP/1.1 200 OK"
+ERROR:env_config:Caption conversion error for video: Timed out
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: turn it into gidf
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'turn it into gidf'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_to_gif",
+ "confidence": 90,
+ "response": "I'll convert your video to GIF format. Processing...",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_to_gif', 'confidence': 90, 'response': "I'll convert your video to GIF format. Processing...", 'show_menu': False}
+INFO:env_config:Video caption intent: convert_to_gif with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/videos/file_14.mp4 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendDocument "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: None
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/editMessageText "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Callback 'svc_back' by 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/editMessageText "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: convert this into csv
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: convert this into word
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: None
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: convert to word
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'convert to word'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_pdf_to_docx",
+ "confidence": 95,
+ "response": "Converting PDF to Word document. Please provide the PDF file.",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_pdf_to_docx', 'confidence': 95, 'response': 'Converting PDF to Word document. Please provide the PDF file.', 'show_menu': False}
+INFO:env_config:Document caption intent: convert_pdf_to_docx with confidence 95
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/documents/file_15.pdf "HTTP/1.1 200 OK"
+ERROR:env_config:Document conversion error: name 'convert_pdf_to_docx' is not defined
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR:telegram.ext.Application:No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/Users/lucky/py-plus/py-ai/commands/handle_media.py", line 519, in handle_media
+    result = await convert_pdf_to_docx(doc_bytes, file_name)
+                   ^^^^^^^^^^^^^^^^^^^
+NameError: name 'convert_pdf_to_docx' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/ext/_application.py", line 1298, in process_update
+    await coroutine
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/ext/_handlers/basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucky/py-plus/py-ai/commands/handle_media.py", line 564, in handle_media
+    return await update.message.reply_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/_message.py", line 1775, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 2977, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/_bot.py", line 1091, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 618, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/_bot.py", line 803, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/telegram/request/_baserequest.py", line 353, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 52
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:__main__:Starting webhook...
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/setWebhook "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application started
+INFO:env_config:Media received from user 6133968140, caption: convert into word
+INFO:env_config:Upserting user 6133968140
+INFO:env_config:Created new user record for 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'convert into word'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_pdf_to_docx",
+ "confidence": 95,
+ "response": "Converting PDF to Word document",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_pdf_to_docx', 'confidence': 95, 'response': 'Converting PDF to Word document', 'show_menu': False}
+INFO:env_config:Document caption intent: convert_pdf_to_docx with confidence 95
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/documents/file_16.pdf "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendDocument "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: convert into json
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'convert into json'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "format_json",
+ "confidence": 90,
+ "response": "Please provide the JSON text you'd like me to format.",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'format_json', 'confidence': 90, 'response': "Please provide the JSON text you'd like me to format.", 'show_menu': False}
+INFO:env_config:Document caption intent: format_json with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/documents/file_17.pdf "HTTP/1.1 200 OK"
+ERROR:env_config:Document conversion error: Unsupported PDF conversion
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: turn it into word
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'turn it into word'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_pdf_to_docx",
+ "confidence": 90,
+ "response": "Converting PDF to Word document",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_pdf_to_docx', 'confidence': 90, 'response': 'Converting PDF to Word document', 'show_menu': False}
+INFO:env_config:Document caption intent: convert_pdf_to_docx with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/documents/file_18.json "HTTP/1.1 200 OK"
+ERROR:env_config:Document conversion error: Unsupported JSON conversion
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Media received from user 6133968140, caption: turn it into csv
+INFO:env_config:Upserting user 6133968140
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendMessage "HTTP/1.1 200 OK"
+INFO:env_config:Agent processing: 'turn it into csv'
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:env_config:Agent raw response: {
+ "service": "convert_json_to_csv",
+ "confidence": 90,
+ "response": "Converting JSON to CSV format",
+ "show_menu": false
+}
+INFO:env_config:Parsed JSON response: {'service': 'convert_json_to_csv', 'confidence': 90, 'response': 'Converting JSON to CSV format', 'show_menu': False}
+INFO:env_config:Document caption intent: convert_json_to_csv with confidence 90
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/getFile "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.telegram.org/file/bot7580016374%3AAAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/documents/file_19.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/sendDocument "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot7580016374:AAGdyvJ5NZqpUIC3-pJipohrgJeTH4C6owA/deleteMessage "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:telegram.ext.Application:Application.stop() complete
+>>>>>>> origin/main
